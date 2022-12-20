@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - '**'
+
+jobs:
+  Runner:
+    timeout-minutes: 10
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ windows-latest ]
+        node-version: [ 16 ]
+    steps:
+      - name: Checkout Git Source
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm i --force
+
+      - name: Continuous integration
+        run: |
+          npm run lint
+          npm run test
