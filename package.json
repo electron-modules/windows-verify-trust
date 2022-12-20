@@ -1,0 +1,39 @@
+{
+  "name": "win-verify-trust",
+  "version": "0.1.0",
+  "description": "win-verify-trust",
+  "keywords": ["win-verify-trust"],
+  "bin": {
+    "win-verify-trust": "./bin/win-verify-trust.js"
+  },
+  "files": [
+    "bin/**/*.js",
+    "lib/**/*.js"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/electron-modules/win-verify-trust.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-plugin-mocha": "^4.11.0",
+    "git-contributor": "1",
+    "husky": "*",
+    "mocha": "*",
+    "nyc": "*"
+  },
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text mocha",
+    "lint": "eslint . --fix",
+    "contributor": "git-contributor"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "license": "MIT"
+}
