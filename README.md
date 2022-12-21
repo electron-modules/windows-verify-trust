@@ -22,6 +22,18 @@
 $ npm i win-verify-trust --save-dev
 ```
 
+<!-- GITCONTRIBUTOR_START -->
+
+## Contributors
+
+|[<img src="https://avatars.githubusercontent.com/u/52845048?v=4" width="100px;"/><br/><sub><b>snapre</b></sub>](https://github.com/snapre)<br/>|[<img src="https://avatars.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|
+| :---: | :---: |
+
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Wed Dec 21 2022 12:41:27 GMT+0800`.
+
+<!-- GITCONTRIBUTOR_END -->
+
 ## License
 
 The MIT License (MIT)
