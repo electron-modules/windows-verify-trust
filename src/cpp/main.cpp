@@ -44,7 +44,7 @@ Napi::Boolean isLibExist(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
   Napi::String filename = verifyInput(info, env);
   HMODULE hLib = getLibHandle(filename);
-  return Napi::Boolean::New(env, hLib == NULL);
+  return Napi::Boolean::New(env, hLib != NULL);
 }
 
 // get path of library

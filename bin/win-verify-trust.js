@@ -16,4 +16,7 @@ function verify(name) {
   return result;
 }
 
-console.log('C++ addon', verify("ntdll.dll"));
+console.log('isLibExist', pkg.isLibExist("ntdll.dll"));
+console.log('getLibPath', pkg.getLibPath("ntdll.dll"));
+console.log('verifySignature', verify("ntdll.dll"));
+
