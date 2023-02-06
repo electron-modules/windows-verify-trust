@@ -2,3 +2,5 @@ node_modules
 .nyc_output
 *.sw*
 *.un~
+.vscode/*
+build/*
