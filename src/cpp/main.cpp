@@ -53,7 +53,7 @@ Napi::String getLibPath(const Napi::CallbackInfo& info) {
   Napi::String filename = verifyInput(info, env);
   HMODULE hLib = getLibHandle(filename);
   if (hLib == NULL) {
-    Napi::TypeError::New(env, "Library not found").ThrowAsJavaScriptException();
+    return Napi::String::New(env, "");
   }
   LPWSTR path = getModulePath(hLib, env);
   // LPWSTR to string (using atlstr)
