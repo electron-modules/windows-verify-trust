@@ -1,6 +1,6 @@
 {
   "name": "windows-verify-trust",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "win verify trust",
   "keywords": [
     "windows"
@@ -9,8 +9,10 @@
     "windows-verify-trust": "./bin/windows-verify-trust.js"
   },
   "files": [
+    "build/Release/*.node",
+    "src/**/*.cpp",
+    "src/**/*.js",
     "bin/**/*.js",
-    "lib/**/*.js"
   ],
   "main": "index.js",
   "repository": {
