@@ -13,10 +13,10 @@ function getLibPath(filename) {
   return winVerifyTrust.getLibPath(filename);
 }
 
-function verifySignature(filename) {
+function verifyTrust(filename) {
   const result = { trusted: false, message: ''};
   try {
-    const status = winVerifyTrust.verifySignature(filename);
+    const status = winVerifyTrust.verifyTrust(filename);
     if (status === 0) {
       result.trusted = true;
       result.message = 'The library is signed, the signature was verified';
@@ -32,5 +32,5 @@ function verifySignature(filename) {
 module.exports = {
   isLibExist,
   getLibPath,
-  verifySignature
+  verifyTrust
 };
