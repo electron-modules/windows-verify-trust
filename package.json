@@ -35,6 +35,7 @@
     "build:debug": "node-gyp configure && node-gyp build --debug",
     "build:release": "node-gyp configure && node-gyp build",
     "build": "node-gyp rebuild",
+    "clean": "node-gyp clean",
     "prepublishOnly": "npm run build",
     "contributor": "git-contributor"
   },
