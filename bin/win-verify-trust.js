@@ -2,9 +2,14 @@
 
 'use strict';
 
-const { isLibExist, getLibPath, verifySignature } = require('../index');
+const { argv } = process;
 
-console.log('isLibExist', isLibExist("ntdll.dll"));
-console.log('getLibPath', getLibPath("ntdll.dll"));
-console.log('verifySignature', verifySignature("ntdll.dll"));
+const targetFileName = argv.pop();
 
+console.log('\ncheck file: %s\n', targetFileName);
+
+const { isLibExist, getLibPath, verifyTrust } = require('../index');
+
+console.log('isLibExist: %b', isLibExist(targetFileName));
+console.log('getLibPath: %s', getLibPath(targetFileName));
+console.log('verifyTrust: %s', verifyTrust(targetFileName));

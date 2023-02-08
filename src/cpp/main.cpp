@@ -62,7 +62,7 @@ Napi::String getLibPath(const Napi::CallbackInfo& info) {
 }
 
 // verify dll signature
-Napi::Number verifySignature(const Napi::CallbackInfo& info) {
+Napi::Number verifyTrust(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
   Napi::String filename = verifyInput(info, env);
   
@@ -78,7 +78,10 @@ Napi::Number verifySignature(const Napi::CallbackInfo& info) {
   WINTRUST_FILE_INFO FileInfo = {};
   WINTRUST_DATA wintrustData = {};
 
-  // WINTRUST_DATA structure: https://learn.microsoft.com/zh-cn/windows/win32/api/wintrust/ns-wintrust-wintrust_data
+  /**
+   * WINTRUST_DATA structure:
+   * https://learn.microsoft.com/zh-cn/windows/win32/api/wintrust/ns-wintrust-wintrust_data
+  */
   wintrustData.cbStruct = sizeof(WINTRUST_DATA);
   wintrustData.dwUIChoice = WTD_UI_NONE;
   wintrustData.dwUnionChoice = WTD_CHOICE_FILE;
@@ -103,18 +106,18 @@ Napi::Number verifySignature(const Napi::CallbackInfo& info) {
   } else {
     result = Napi::Number::New(env, lResult);
   }
-  
+
   // cleanup wintrustData and free memory
   wintrustData.dwStateAction = WTD_STATEACTION_CLOSE;
   lResult = WinVerifyTrust(NULL, &pgActionID, &wintrustData);
-	
+
   return result;
 }
 
 Napi::Object Init(Napi::Env env, Napi::Object exports){
   exports.Set("isLibExist", Napi::Function::New(env, isLibExist));
   exports.Set("getLibPath", Napi::Function::New(env, getLibPath));
-  exports.Set("verifySignature", Napi::Function::New(env, verifySignature));
+  exports.Set("verifyTrust", Napi::Function::New(env, verifyTrust));
   return exports;
 }
 
