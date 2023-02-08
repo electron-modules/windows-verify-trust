@@ -1,12 +1,12 @@
 {
-  "name": "win-verify-trust",
+  "name": "windows-verify-trust",
   "version": "0.1.0",
   "description": "win verify trust",
   "keywords": [
     "windows"
   ],
   "bin": {
-    "win-verify-trust": "./bin/win-verify-trust.js"
+    "windows-verify-trust": "./bin/windows-verify-trust.js"
   },
   "files": [
     "bin/**/*.js",
@@ -15,7 +15,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/electron-modules/win-verify-trust.git"
+    "url": "git://github.com/electron-modules/windows-verify-trust.git"
   },
   "dependencies": {
     "bindings": "^1.5.0",
