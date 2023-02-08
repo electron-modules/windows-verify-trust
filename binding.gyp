@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "win-verify-trust",
+      "target_name": "windows-verify-trust",
       "sources": [
         "./src/cpp/main.cpp"
       ],
