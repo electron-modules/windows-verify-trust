@@ -12,7 +12,7 @@
     "build/Release/*.node",
     "src/**/*.cpp",
     "src/**/*.js",
-    "bin/**/*.js",
+    "bin/**/*.js"
   ],
   "main": "index.js",
   "repository": {
