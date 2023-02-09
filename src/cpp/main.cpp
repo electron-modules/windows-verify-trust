@@ -26,8 +26,7 @@ std::wstring napiStringToWString(const Napi::String str) {
 
 HMODULE getLibHandle(const Napi::String filename) {
   LPCWSTR wFilename = napiStringToWString(filename).c_str();
-  // HMODULE hLib = LoadLibrary(wFilename);
-  HMODULE hLib = GetModuleHandle(wFilename);
+  HMODULE hLib = LoadLibrary(wFilename);
   return hLib;
 }
 
